@@ -7,6 +7,10 @@ All notable changes to this project will be documented in this file. This change
 ## Updated
 - dev: default to reloaded repl task for make repl
 
+## Changed
+- minimal: CHANGELOG.md reference to 'service' changed to 'minimal'
+- minimal: Makefile clojure -M:run/service => clojure -M:run/app
+
 # 2025-11-09
 ## Added
 - dev: add version control tasks and update format
