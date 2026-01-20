@@ -17,6 +17,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Added
 
-* [#1](https://github.com/practicalli/clojure/issues/1) Created {{raw-name}} project with deps-new using practicalli.template/service
+* [#1](https://github.com/practicalli/clojure/issues/1) Created {{raw-name}} project with deps-new using practicalli.template/minimal
 
 [Unreleased]: https://{{scm/domain}}/{{scm/user}}/{{scm/repo}}/compare/0.1.1...HEAD
