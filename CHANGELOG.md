@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This change
 
 # [Unreleased]
 
+# 2026-02-05
+
 ## Updated
 - dev: default to reloaded repl task for make repl
 - dev: update pom with clojure -X:deps mvn-pom
