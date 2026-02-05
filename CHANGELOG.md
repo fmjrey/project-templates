@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file. This change
 
 ## Updated
 - dev: default to reloaded repl task for make repl
+- dev: updated GitHub action versions in all workflows
+
+| :file                                 | :name                    | :current    | :latest     |
+|---------------------------------------|--------------------------|-------------|-------------|
+| .github/workflows/megalinter.yaml     | actions/upload-artifact  | v5          | v6          |
+| .github/workflows/quality-checks.yaml | DeLaGuardo/setup-clojure | 13.4        | 13.5.2      |
+|                                       | actions/cache            | v4          | v5.0.3      |
+|                                       | clj-kondo/clj-kondo      | 2025.10.23  | 2026.01.19  |
+|                                       | clojure/brew-install     | 1.12.3.1577 | 1.12.4.1602 |
+
 
 ## Changed
 - minimal: CHANGELOG.md reference to 'service' changed to 'minimal'
