@@ -16,6 +16,14 @@ All notable changes to this project will be documented in this file. This change
 |                                       | clj-kondo/clj-kondo      | 2025.10.23  | 2026.01.19  |
 |                                       | clojure/brew-install     | 1.12.3.1577 | 1.12.4.1602 |
 
+- aliases: update library versions using `make dependencies-update`
+
+| :name                           | :current | :latest |
+|---------------------------------|----------|---------|
+| org.clojure/clojure             | 1.12.3   | 1.12.4  |
+| org.clojure/test.check          | 1.1.2    | 1.1.3   |
+| io.github.seancorfield/deps-new | 0.10.2   | 0.10.3  |
+
 
 ## Changed
 - minimal: CHANGELOG.md reference to 'service' changed to 'minimal'
