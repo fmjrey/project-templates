@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This change
 
 ## Updated
 - dev: default to reloaded repl task for make repl
+- dev: update pom with clojure -X:deps mvn-pom
 - dev: updated GitHub action versions in all workflows
 
 | :file                                 | :name                    | :current    | :latest     |
