@@ -62,4 +62,4 @@ make dist
 
 Copyright © 2023 {{developer}}
 
-Distributed under the Creative Commons Attribution Share-Alike 4.0 International
+[{{license/name}}]({{license/url}})

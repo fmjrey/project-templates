@@ -11,7 +11,8 @@
 
 (ns practicalli.minimal
   "Programmatic transformation of template substitution data
-  and declarative transformation rules")
+  and declarative transformation rules"
+  (:require [practicalli.licenses :as pl]))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn substitutions
@@ -25,7 +26,7 @@
   #_(when (= (data :specification) "clojure.spec")
       {:clojure-spec true})
 
-  nil) ; returning nil means no changes to options data
+  (pl/id->license (:license/id data)))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn template-edn

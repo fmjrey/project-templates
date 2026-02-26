@@ -13,7 +13,8 @@
   "Programmatic transformation of template substitution data
   and declarative transformation rules"
   (:require
-   [clojure.pprint :as print]))
+   [clojure.pprint :as print]
+   [practicalli.licenses :as licenses]))
 
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
@@ -28,7 +29,7 @@
   #_(when (= (data :specification) "clojure.spec")
       {:clojure-spec true})
 
-  nil) ; returning nil means no changes to options data
+  (licenses/id->license (:license/id data)))
 
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}

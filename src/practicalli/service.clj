@@ -13,7 +13,8 @@
   "Programmatic transformation of template data transformation rules"
   (:require
    [clojure.pprint :as pprint]
-   [practicalli.rules :as rules]))
+   [practicalli.rules :as rules]
+   [practicalli.licenses :as licenses]))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn substitutions
@@ -22,12 +23,14 @@
   Return:
   - hash-map to be merged into the existing substitution data"
   [data]
+
   ;; Simple example:
   #_(when (= (data :component) "integrant")
       {:integrant-repl true})
   ;; (println "Calculating substitutions...")
   ;; (pprint/pprint data)
-  nil) ; returning nil means no changes to options data
+
+  (licenses/id->license (:license/id data)))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn template-edn
