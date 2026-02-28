@@ -4,16 +4,19 @@
   (:require [clojure.string :as str]
             [spdx.licenses :as sl]))
 
-;; Initializes persistent local cache, which may take some time the first time.
+;; Until the SPDX library offers a cache that is built as needed, the use of
+;; licenses info included in the SPDX JAR should be fit for purpose because
+;; licenses don't change very often.
+(when (str/blank? (System/getProperty "org.spdx.useJARLicenseInfoOnly"))
+  (System/setProperty "org.spdx.useJARLicenseInfoOnly" (str true)))
+;; Without the above the following would load all licenses from SPDX web API.
 ;; Local cache is stored in the user cache directory (i.e.
 ;; `${XDG_CACHE_HOME}/Spdx-Java-Library` or `${HOME}/.cache/Spdx-Java-Library`)
-;; Normally not needed, will be lazily created, but still worth mentioning here
-;; in case there is a need to load it at a specific time.
-;(sl/init!)
+(sl/init!)
 
 (defn id->license
-  "Retrieve from [SPDX](https://spdx.dev/) the full info and text of a license
-  identified with the given string `id`, or `nil` of not found.
+  "Retrieve from [SPDX](https://spdx.dev/) library the full info and text of
+  a license identified with the given string `id`, or `nil` if not found.
   If `id` is not provided it defaults to `\"EPL-1.0\"`, a license typically
   used in clojure projects.
   Other popular licenses are `\"MIT\"`, `\"Apache-2.0\"`, `\"EPL-2.0\"`, or any
@@ -26,7 +29,7 @@
   "
   ([] (id->license nil))
   ([id]
-   (let [id (if (str/blank? id) "EPL-1.0" id)
+   (let [id (if (str/blank? (str id)) "EPL-1.0" (str id))
          {:keys [id name text see-also]}
          (sl/id->info id {:include-large-text-values? true})
          missing (fn [fieldname]

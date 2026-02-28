@@ -66,7 +66,7 @@ Override the defaults used to create a project using command line options
 ```shell
 clojure -T:project/create :template practicalli/service \
 :name practicalli/gameboard :target-dir gameboard-service \
-:license/id '"MIT"'
+:license/id MIT
 ```
 
 
